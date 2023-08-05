@@ -1,0 +1,16 @@
+<% if Current.user %>
+    Logged in as: <%= Current.user.email %><br>
+    <%= button_to 'Logout', logout_path, method: :delete %>
+    <li><%= link_to 'Profile', profile_path %></li>
+    <%= link_to 'View My Blogs', blogs_path%><br>
+    <%= link_to 'View All Blogs', details_path%><br>
+    <%= link_to 'All Register Users', users_path%>
+
+    <% else %>
+    <%= link_to 'Sign Up', sign_up_path %>
+    or
+    <%= link_to 'Login', sign_in_path %><br>
+    <%= link_to 'All Register Users', users_path%>
+<% end %>
+
+
